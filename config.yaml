@@ -1,0 +1,60 @@
+# ai-daily-digest configuration
+#
+# Every feed URL below was checked by hand (with curl) to make sure it
+# returns a real, working RSS feed. If you add a feed, test it first:
+#
+#   curl -sL -A "Mozilla/5.0" "YOUR_URL" | head -c 500
+#
+# You should see XML containing <rss>, <feed>, <item>, or <entry> tags.
+# If you see an error page or a 403/429 instead, the site is blocking
+# automated readers, so pick a different feed.
+
+feeds:
+  - name: "Hugging Face Blog"
+    url: "https://huggingface.co/blog/feed.xml"
+  - name: "MIT Technology Review - AI"
+    url: "https://www.technologyreview.com/topic/artificial-intelligence/feed/"
+  - name: "TechCrunch - AI"
+    url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+  - name: "The Decoder"
+    url: "https://the-decoder.com/feed/"
+  - name: "OpenAI News"
+    url: "https://openai.com/news/rss.xml"
+  - name: "The Verge - AI"
+    url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+
+# Keywords used to rank stories. A story scores higher when these words
+# appear in its title (counts double) or in its summary. Add words you
+# care about, remove ones you do not. Matching is case-insensitive.
+keywords:
+  - "large language model"
+  - "LLM"
+  - "GPT"
+  - "agent"
+  - "agentic"
+  - "RAG"
+  - "multimodal"
+  - "open source"
+  - "fine-tuning"
+  - "inference"
+  - "reasoning"
+  - "robotics"
+  - "diffusion"
+  - "transformer"
+  - "MCP"
+  - "prompt engineering"
+  - "evaluation"
+  - "AI safety"
+  - "regulation"
+  - "startup"
+  - "funding"
+  - "open weights"
+
+settings:
+  # Ignore stories older than this many days.
+  max_age_days: 7
+  # Where we remember story URLs we already saw, so we never draft the
+  # same story twice. This file is created automatically on the first run.
+  state_file: "state/seen.json"
+  # Where finished LinkedIn drafts are saved.
+  drafts_dir: "drafts"

@@ -9,6 +9,8 @@ venv/
 # Secrets: never commit API keys
 .env
 
-# Local run state (seen URLs) and logs
-state/
+# Logs
 *.log
+
+# NOTE: state/ (the seen-URLs notebook) is intentionally NOT ignored.
+# The daily workflow commits it so each run remembers what it already saw.
